@@ -42,6 +42,8 @@ public abstract class AbstractIntegrationTestCase {
 
 		this.dataSource = createMondrianDataSource();
 		this.model = createPivotModel(dataSource);
+		
+		Locale.setDefault(new Locale("en", "US"));
 	}
 
 	@After
