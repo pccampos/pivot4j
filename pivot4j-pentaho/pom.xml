@@ -1,10 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.eyeq</groupId>
 		<artifactId>pivot4j</artifactId>
-		<version>0.8-SNAPSHOT</version>
+		<version>0.9-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
@@ -12,6 +11,12 @@
 	<name>Pivot4J Pentaho</name>
 	<description>Pivot4J Pentatho is an OLAP analysis plugin for BI platform based on Pivot4J library.</description>
 	<packaging>jar</packaging>
+
+	<properties>
+		<pentaho.plugin.branch>Development</pentaho.plugin.branch>
+		<pentaho.plugin.buildId>${maven.build.timestamp}</pentaho.plugin.buildId>
+		<maven.build.timestamp.format>yyyyMMddHHmm</maven.build.timestamp.format>
+	</properties>
 
 	<build>
 		<plugins>
@@ -45,7 +50,7 @@
 								<targetDirectory>${project.build.directory}/plugin</targetDirectory>
 								<resources>
 									<resource>
-										<path></path>
+										<path />
 										<destination>webapp</destination>
 										<include>*.xhtml</include>
 									</resource>
@@ -163,7 +168,7 @@
 		<dependency>
 			<groupId>pentaho</groupId>
 			<artifactId>pentaho-platform-core</artifactId>
-			<version>TRUNK-SNAPSHOT</version>
+			<version>5.0.0</version>
 			<scope>provided</scope>
 			<exclusions>
 				<exclusion>
@@ -174,20 +179,14 @@
 		</dependency>
 		<dependency>
 			<groupId>pentaho</groupId>
-			<artifactId>pentaho-bi-platform-api</artifactId>
-			<version>TRUNK-SNAPSHOT</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>pentaho</groupId>
-			<artifactId>pentaho-bi-platform-engine-core</artifactId>
-			<version>TRUNK-SNAPSHOT</version>
+			<artifactId>pentaho-platform-api</artifactId>
+			<version>5.0.0</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>pentaho</groupId>
 			<artifactId>pentaho-platform-extensions</artifactId>
-			<version>TRUNK-SNAPSHOT</version>
+			<version>5.0.0</version>
 			<scope>provided</scope>
 			<exclusions>
 				<exclusion>
@@ -215,13 +214,7 @@
 		<dependency>
 			<groupId>pentaho</groupId>
 			<artifactId>pentaho-connections</artifactId>
-			<version>TRUNK-SNAPSHOT</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>pentaho</groupId>
-			<artifactId>mondrian</artifactId>
-			<version>TRUNK-SNAPSHOT</version>
+			<version>5.0.0</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
